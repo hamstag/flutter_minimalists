@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_minimalists/pages/home/home_page.dart';
+import 'package:flutter_minimalists/services/navigation_service.dart';
 import 'package:flutter_minimalists/services/service_locator.dart';
 
 main() {
@@ -15,6 +16,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      navigatorKey: NavigationService.get().navigatorKey,
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),

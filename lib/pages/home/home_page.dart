@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_minimalists/pages/about/about_page.dart';
 import 'package:flutter_minimalists/pages/home/home_page_manager.dart';
+import 'package:flutter_minimalists/services/navigation_service.dart';
 import 'package:flutter_minimalists/services/service_locator.dart';
 
 class HomePage extends StatefulWidget {
@@ -76,7 +78,17 @@ class _HomePageState extends State<HomePage> {
                   ],
                 );
               },
-            )
+            ),
+            const VerticalDivider(indent: 32),
+            ElevatedButton(
+              onPressed: () async {
+                var result = await NavigationService.state().push(
+                    MaterialPageRoute(builder: (context) => const AboutPage()));
+
+                debugPrint(result?[0]);
+              },
+              child: const Text("About"),
+            ),
           ],
         ),
       ),
