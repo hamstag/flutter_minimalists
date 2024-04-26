@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_minimalists/pages/about/about_page.dart';
 import 'package:flutter_minimalists/pages/home/home_page_manager.dart';
+import 'package:flutter_minimalists/services/dialog_service.dart';
 import 'package:flutter_minimalists/services/navigation_service.dart';
 import 'package:flutter_minimalists/services/service_locator.dart';
 
@@ -88,6 +89,11 @@ class _HomePageState extends State<HomePage> {
                 debugPrint(result?[0]);
               },
               child: const Text("About"),
+            ),
+            const VerticalDivider(indent: 32),
+            ElevatedButton(
+              onPressed: () => DialogService.get().alert(),
+              child: const Text("Alert"),
             ),
           ],
         ),
