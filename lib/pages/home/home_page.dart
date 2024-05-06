@@ -83,7 +83,7 @@ class _HomePageState extends State<HomePage> {
             const VerticalDivider(indent: 32),
             ElevatedButton(
               onPressed: () async {
-                var result = await NavigationService.state().push(
+                final result = await NavigationService.state().push(
                     MaterialPageRoute(builder: (context) => const AboutPage()));
 
                 debugPrint(result?[0]);

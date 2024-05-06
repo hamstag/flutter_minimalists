@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_minimalists/pages/home/home_page.dart';
 import 'package:flutter_minimalists/services/navigation_service.dart';
+import 'package:flutter_minimalists/services/pusher_service.dart';
 import 'package:flutter_minimalists/services/service_locator.dart';
 
-main() {
-  WidgetsFlutterBinding.ensureInitialized;
+main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   setupServiceLocator();
+  await PusherService.get().init();
   runApp(const MyApp());
 }
 

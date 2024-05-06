@@ -8,17 +8,18 @@ class DialogService {
   final BuildContext context =
       NavigationService.get().navigatorKey.currentState!.overlay!.context;
 
-  Future<void> alert() async {
+  Future<void> alert({String message = "Hello"}) async {
     return showDialog<void>(
       context: context,
       barrierDismissible: false,
       builder: (context) => AlertDialog(
         title: const Text("AlertDialog Title"),
-        content: const SingleChildScrollView(
+        content: SingleChildScrollView(
           child: ListBody(
             children: <Widget>[
-              Text('This is a demo alert dialog.'),
-              Text('Would you like to approve of this message?'),
+              const Text('This is a demo alert dialog.'),
+              const Text('Would you like to approve of this message?'),
+              Text(message),
             ],
           ),
         ),
