@@ -12,19 +12,34 @@ class AboutPageManager {
   final pusher = PusherService.get().pusher;
 
   late StreamSubscription connectionSub;
-  late StreamSubscription<ChannelReadEvent> myEvent;
+  late StreamSubscription<ChannelReadEvent> myEvent, myPrivateEvent;
 
   Future<void> subscribe() async {
     debugPrint("subscribe()");
 
+    final privateChannel = pusher.privateChannel(
+      "private-my-channel",
+      authorizationDelegate:
+          EndpointAuthorizableChannelTokenAuthorizationDelegate
+              .forPrivateChannel(
+        authorizationEndpoint:
+            Uri.parse('https://localhost.hamstag.com/pusher/auth'),
+        headers: const {
+          "Authorization": "Bearer 1234567890",
+        },
+      ),
+    );
+
     final channel = pusher.publicChannel("my-channel");
 
-    connectionSub = pusher.onConnectionEstablished
-        .listen((_) => channel.subscribeIfNotUnsubscribed());
+    connectionSub = pusher.onConnectionEstablished.listen((_) {
+      privateChannel.subscribeIfNotUnsubscribed();
+      channel.subscribeIfNotUnsubscribed();
+    });
 
     unawaited(pusher.connect());
 
-    myEvent = channel.bind("my-event").listen((event) {
+    myPrivateEvent = privateChannel.bind("my-event").listen((event) {
       debugPrint(event.data);
 
       final data = jsonDecode(event.data) as Map<String, dynamic>;
@@ -32,10 +47,15 @@ class AboutPageManager {
 
       DialogService.get().alert(message: data["message"]);
     });
+
+    myEvent = channel.bind("my-event").listen((event) {
+      debugPrint(event.data);
+    });
   }
 
   Future<void> unsubscribe() async {
     connectionSub.cancel();
+    myPrivateEvent.cancel();
     myEvent.cancel();
     unawaited(pusher.disconnect());
   }
