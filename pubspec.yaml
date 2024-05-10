@@ -36,6 +36,7 @@ dependencies:
   cupertino_icons: ^1.0.6
   get_it: ^7.7.0
   dart_pusher_channels: ^1.2.2+1
+  http: ^1.2.1
 
 dev_dependencies:
   flutter_test:

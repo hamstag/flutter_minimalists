@@ -10,8 +10,8 @@ class PusherService {
   Future<void> init() async {
     const hostOptions = PusherChannelsOptions.fromHost(
       scheme: "wss",
-      host: "",
-      key: "",
+      host: "soketi.hamstag.com",
+      key: "38ce09e5d71ff69c10594f97c83f167d",
       port: 443,
     );
 

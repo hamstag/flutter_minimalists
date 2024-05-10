@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_minimalists/pages/about/about_page.dart';
 import 'package:flutter_minimalists/pages/home/home_page_manager.dart';
+import 'package:flutter_minimalists/pages/mercure/mercure_page.dart';
 import 'package:flutter_minimalists/services/dialog_service.dart';
 import 'package:flutter_minimalists/services/navigation_service.dart';
 import 'package:flutter_minimalists/services/service_locator.dart';
@@ -25,6 +26,13 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
+            ElevatedButton(
+              onPressed: () {
+                NavigationService.state().push(MaterialPageRoute(
+                    builder: (context) => const MercurePage()));
+              },
+              child: const Text("Mercure Page"),
+            ),
             ValueListenableBuilder<String>(
               valueListenable: getIt<HomePageManager>().message,
               child: ElevatedButton(
