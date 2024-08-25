@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_minimalists/features/home/home_manager.dart';
+import 'package:flutter_minimalists/modules/home/home_manager.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
-import 'package:flutter_minimalists/features/auth/auth_service.dart';
-import 'package:flutter_minimalists/features/auth/auth_store.dart';
+import 'package:flutter_minimalists/modules/auth/auth_service.dart';
+import 'package:flutter_minimalists/modules/auth/auth_store.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});

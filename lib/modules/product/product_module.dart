@@ -1,8 +1,8 @@
 import 'package:flutter_minimalists/core/core_module.dart';
-import 'package:flutter_minimalists/features/product/catalog/catalog_manager.dart';
-import 'package:flutter_minimalists/features/product/catalog/catalog_page.dart';
-import 'package:flutter_minimalists/features/product/product/product_manager.dart';
-import 'package:flutter_minimalists/features/product/product/product_page.dart';
+import 'package:flutter_minimalists/modules/product/catalog/catalog_manager.dart';
+import 'package:flutter_minimalists/modules/product/catalog/catalog_page.dart';
+import 'package:flutter_minimalists/modules/product/product/product_manager.dart';
+import 'package:flutter_minimalists/modules/product/product/product_page.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
 class ProductModule extends Module {

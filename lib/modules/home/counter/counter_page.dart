@@ -1,7 +1,7 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_minimalists/features/home/counter/counter_store.dart';
+import 'package:flutter_minimalists/modules/home/counter/counter_store.dart';
 import 'package:flutter_triple/flutter_triple.dart';
 
 class CounterPage extends StatefulWidget {

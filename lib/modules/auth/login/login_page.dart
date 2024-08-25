@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
-import 'package:flutter_minimalists/features/auth/auth_manager.dart';
+import 'package:flutter_minimalists/modules/auth/auth_manager.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});

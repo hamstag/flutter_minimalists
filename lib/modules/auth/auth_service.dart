@@ -2,7 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_minimalists/core/services/http_client/http_client.dart';
-import 'package:flutter_minimalists/features/auth/auth_model.dart';
+import 'package:flutter_minimalists/modules/auth/auth_model.dart';
 
 typedef LoginRequest = ({String username, String password});
 typedef AuthResponse = ({String token, AuthModel model});

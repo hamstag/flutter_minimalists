@@ -1,5 +1,5 @@
 import 'package:flutter_minimalists/core/base_manager.dart';
-import 'package:flutter_minimalists/features/auth/auth_store.dart';
+import 'package:flutter_minimalists/modules/auth/auth_store.dart';
 
 class HomeManager extends BaseManager {
   final AuthStore _authStore;

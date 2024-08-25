@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter_minimalists/core/services/local_storage/local_storage.dart';
-import 'package:flutter_minimalists/features/auth/auth_model.dart';
+import 'package:flutter_minimalists/modules/auth/auth_model.dart';
 
 class AuthStore {
   final LocalStorage _storage;

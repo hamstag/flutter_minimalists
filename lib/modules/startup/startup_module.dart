@@ -1,8 +1,8 @@
 import 'package:flutter_modular/flutter_modular.dart';
 
-import 'package:flutter_minimalists/features/auth/auth_module.dart';
-import 'package:flutter_minimalists/features/startup/startup_manager.dart';
-import 'package:flutter_minimalists/features/startup/startup_page.dart';
+import 'package:flutter_minimalists/modules/auth/auth_module.dart';
+import 'package:flutter_minimalists/modules/startup/startup_manager.dart';
+import 'package:flutter_minimalists/modules/startup/startup_page.dart';
 
 class StartupModule extends Module {
   @override
